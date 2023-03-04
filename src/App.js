@@ -6,7 +6,7 @@ import './App.css'
 //---------------import TodoContainer Component-----------------------//
 import TodoContainer from './Components/TodoContainer'
 // --------------------Bars for loading wait animation ---------------//
-import { Bars } from "react-loader-spinner";
+import { ColorRing } from "react-loader-spinner";
 // ----------main Component of this Todo App -------------------------//
 const App = () => {
 
@@ -38,7 +38,15 @@ const App = () => {
           {loading ? (
               <TodoContainer jsonTodos={json} />
           ) : (
-              <Bars height="180" width="180" color="#4fa94d" ariaLabel="bars-loading" visible={true} />
+            <ColorRing
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="blocks-loading"
+            wrapperStyle={{}}
+            wrapperClass="blocks-wrapper"
+            colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+          />
           )}
           
     </div>
